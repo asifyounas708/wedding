@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asif & Remsha's Wedding Celebration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E75480;
+            --secondary: #FFB6C1;
+            --accent: #FF69B4;
+            --gold: #D4AF37;
+            --dark: #5D3A5E;
+            --light: #FFF9FB;
+            --gradient: linear-gradient(135deg, #E75480 0%, #FFB6C1 100%);
+            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F7EF8A 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--secondary);
+            opacity: 0.3;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header with Names */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .names-container {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .name {
+            display: inline-block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            position: relative;
+            animation: slideIn 1.2s ease-out;
+        }
+        
+        .name-asif {
+            margin-right: 30px;
+            animation-delay: 0.2s;
+        }
+        
+        .name-remsha {
+            animation-delay: 0.4s;
+        }
+        
+        .and-symbol {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--gold);
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.9; }
+        }
+        
+        /* Main Celebration Card */
+        .celebration-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(231, 84, 128, 0.15);
+            padding: 40px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card-decoration {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--gradient);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .celebration-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .celebration-title span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        /* Wedding Date Section */
+        .date-section {
+            background: var(--gradient-gold);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+            animation: slideInRight 1.2s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        .date-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .date-display {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: var(--dark);
+            line-height: 1;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Countdown Timer */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .countdown-item {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 15px;
+            min-width: 130px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(231, 84, 128, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(231, 84, 128, 0.2);
+        }
+        
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .countdown-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .countdown-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        /* Message Section */
+        .message-section {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin: 50px 0;
+            box-shadow: 0 15px 35px rgba(231, 84, 128, 0.1);
+            animation: fadeInUp 1.5s ease-out;
+        }
+        
+        .message-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .message-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .message-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .message-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(231, 84, 128, 0.08);
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s;
+        }
+        
+        .message-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .message-from {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .message-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+        
+        /* Interactive Hearts */
+        .hearts-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .heart-item {
+            width: 180px;
+            height: 180px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(231, 84, 128, 0.15);
+            cursor: pointer;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .heart-item:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 25px 45px rgba(231, 84, 128, 0.25);
+        }
+        
+        .heart-item i {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        
+        .heart-item:hover i {
+            transform: scale(1.2);
+        }
+        
+        .heart-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: var(--gradient);
+        }
+        
+        .footer-text {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .footer-date {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-top: 15px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .name {
+                font-size: 3.5rem;
+            }
+            
+            .date-display {
+                font-size: 3.5rem;
+            }
+            
+            .celebration-title {
+                font-size: 2.5rem;
+            }
+            
+            .countdown-item {
+                min-width: 110px;
+                padding: 20px 10px;
+            }
+            
+            .countdown-value {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .names-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .name-asif {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .and-symbol {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                margin: 10px 0;
+            }
+            
+            .name {
+                font-size: 3rem;
+            }
+            
+            .date-display {
+                font-size: 2.8rem;
+            }
+            
+            .countdown-container {
+                gap: 15px;
+            }
+            
+            .countdown-item {
+                min-width: 90px;
+            }
+            
+            .heart-item {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .celebration-card {
+                padding: 25px;
+            }
+            
+            .message-section {
+                padding: 25px;
+            }
+            
+            .date-section {
+                padding: 25px;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .date-display {
+                font-size: 2.2rem;
+            }
+            
+            .celebration-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            opacity: 0;
+            z-index: 1000;
+            border-radius: 0;
+        }
+        
+        .confetti:nth-child(2n) {
+            background: var(--secondary);
+        }
+        
+        .confetti:nth-child(3n) {
+            background: var(--gold);
+        }
+        
+        .confetti:nth-child(4n) {
+            background: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation" id="bgAnimation"></div>
+    
+    <!-- Confetti Container -->
+    <div id="confettiContainer"></div>
+    
+    <div class="container">
+        <!-- Header with Names -->
+        <header class="header">
+            <div class="names-container">
+                <div class="name name-asif">Asif</div>
+                <div class="and-symbol">&</div>
+                <div class="name name-remsha">Remsha</div>
+            </div>
+            <h2 class="celebration-title">We're Getting Married!</h2>
+        </header>
+        
+        <!-- Main Celebration Card -->
+        <main class="celebration-card">
+            <div class="card-decoration"></div>
+            
+            <!-- Wedding Date Section -->
+            <section class="date-section">
+                <div class="date-label">Our Wedding Date is Finally Set</div>
+                <div class="date-display">28th March 2026</div>
+                <div class="date-label">The day our forever begins</div>
+            </section>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">000</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <!-- Message Section -->
+            <section class="message-section">
+                <h3 class="message-title">Messages of Love</h3>
+                <div class="message-content">
+                    <div class="message-box">
+                        <div class="message-from">
+                            <i class="fas fa-heart"></i> Asif to Remsha
+                        </div>
+                        <p class="message-text">
+                            My dearest Remsha, the moment we finalized our wedding date, my heart overflowed with joy. 
+                            March 28, 2026 will be the most important day of my life - the day I get to call you my wife. 
+                            Every moment with you has been leading to this beautiful beginning. I promise to cherish you, 
+                            love you, and stand by you forever. You are my dream come true.
+                        </p>
+                    </div>
+                    
+                    <div class="message-box">
+                        <div class="message-from">
+                            <i class="fas fa-heart"></i> A Promise
+                        </div>
+                        <p class="message-text">
+                            To the love of my life, I vow to make every day as special as our wedding day. 
+                            Our journey together has been magical, and I can't wait to embark on this new chapter as husband and wife. 
+                            You are my everything, Remsha, and I count down every second until we say "I do."
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Interactive Hearts -->
+            <div class="hearts-container">
+                <div class="heart-item" id="memoryHeart">
+                    <i class="fas fa-heart-circle-plus"></i>
+                    <div class="heart-label">Our Memories</div>
+                </div>
+                
+                <div class="heart-item" id="promiseHeart">
+                    <i class="fas fa-gem"></i>
+                    <div class="heart-label">My Promise</div>
+                </div>
+                
+                <div class="heart-item" id="futureHeart">
+                    <i class="fas fa-star"></i>
+                    <div class="heart-label">Our Future</div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">With all my love, forever and always</p>
+            <p class="footer-text">Asif Younas</p>
+            <div class="footer-date">March 28, 2026</div>
+        </footer>
+    </div>
+
+    <script>
+        // Create animated background elements
+        function createBackgroundAnimation() {
+            const bgAnimation = document.getElementById('bgAnimation');
+            const elementCount = 15;
+            
+            for (let i = 0; i < elementCount; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random properties
+                const size = Math.random() * 100 + 20;
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                const delay = Math.random() * 10;
+                const duration = Math.random() * 20 + 15;
+                const blur = Math.random() * 10 + 5;
+                
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                element.style.left = `${left}%`;
+                element.style.top = `${top}%`;
+                element.style.animationDelay = `${delay}s`;
+                element.style.animationDuration = `${duration}s`;
+                element.style.filter = `blur(${blur}px)`;
+                
+                // Random gradient
+                const gradients = [
+                    'linear-gradient(135deg, #E75480 0%, #FFB6C1 100%)',
+                    'linear-gradient(135deg, #D4AF37 0%, #F7EF8A 100%)',
+                    'linear-gradient(135deg, #FFB6C1 0%, #FFD9E2 100%)'
+                ];
+                const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+                element.style.background = randomGradient;
+                
+                bgAnimation.appendChild(element);
+            }
+        }
+        
+        // Wedding Countdown Timer
+        function setupCountdown() {
+            const weddingDate = new Date(2026, 2, 28); // March 28, 2026 (month is 0-indexed)
+            
+            function updateCountdown() {
+                const now = new Date();
+                const timeRemaining = weddingDate - now;
+                
+                if (timeRemaining > 0) {
+                    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                    
+                    document.getElementById('days').textContent = days.toString().padStart(3, '0');
+                    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                    
+                    // Trigger confetti when reaching certain milestones
+                    if (seconds === 0 && minutes === 0 && hours === 0) {
+                        createConfetti();
+                    }
+                } else {
+                    // If wedding date has passed
+                    document.querySelector('.countdown-container').innerHTML = 
+                        '<div style="font-size: 2.5rem; color: var(--primary); font-family: \'Great Vibes\', cursive; text-align: center; padding: 40px;">We\'re Married! Today is our anniversary!</div>';
+                }
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+        
+        // Create confetti animation
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confettiContainer');
+            const confettiCount = 150;
+            
+            // Clear previous confetti
+            confettiContainer.innerHTML = '';
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                // Random properties
+                const left = Math.random() * 100;
+                const size = Math.random() * 10 + 5;
+                const rotation = Math.random() * 360;
+                const fallDuration = Math.random() * 3 + 2;
+                const fallDelay = Math.random() * 5;
+                
+                confetti.style.left = `${left}%`;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.transform = `rotate(${rotation}deg)`;
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                
+                // Animation
+                const animation = confetti.animate([
+                    { 
+                        opacity: 1, 
+                        transform: `translateY(0) rotate(0deg)`,
+                        top: '-10px'
+                    },
+                    { 
+                        opacity: 0.8, 
+                        transform: `translateY(100vh) rotate(${rotation * 5}deg)`,
+                        top: '100vh'
+                    }
+                ], {
+                    duration: fallDuration * 1000,
+                    delay: fallDelay * 100,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+                
+                confettiContainer.appendChild(confetti);
+                
+                // Remove confetti after animation
+                animation.onfinish = () => {
+                    confetti.remove();
+                };
+            }
+        }
+        
+        // Interactive Hearts functionality
+        document.getElementById('memoryHeart').addEventListener('click', function() {
+            createConfetti();
+            showHeartMessage("Every memory with you is precious, Remsha. From our first meeting to this moment of planning our wedding, each memory is a treasure I hold close to my heart.");
+        });
+        
+        document.getElementById('promiseHeart').addEventListener('click', function() {
+            createConfetti();
+            showHeartMessage("I promise to love you more each day, to support your dreams, to be your partner in everything, and to cherish our marriage forever. This is my vow to you, Remsha.");
+        });
+        
+        document.getElementById('futureHeart').addEventListener('click', function() {
+            createConfetti();
+            showHeartMessage("Our future together is the brightest dream I've ever had. I can't wait to build a home, a family, and a lifetime of happiness with you, my love.");
+        });
+        
+        function showHeartMessage(message) {
+            // Create a temporary message element
+            const messageEl = document.createElement('div');
+            messageEl.style.position = 'fixed';
+            messageEl.style.top = '50%';
+            messageEl.style.left = '50%';
+            messageEl.style.transform = 'translate(-50%, -50%)';
+            messageEl.style.backgroundColor = 'white';
+            messageEl.style.padding = '25px';
+            messageEl.style.borderRadius = '15px';
+            messageEl.style.boxShadow = '0 20px 50px rgba(231, 84, 128, 0.3)';
+            messageEl.style.zIndex = '10000';
+            messageEl.style.maxWidth = '500px';
+            messageEl.style.width = '90%';
+            messageEl.style.textAlign = 'center';
+            messageEl.style.fontSize = '1.2rem';
+            messageEl.style.lineHeight = '1.6';
+            messageEl.style.color = 'var(--dark)';
+            messageEl.style.border = '3px solid var(--primary)';
+            messageEl.style.fontFamily = "'Cormorant Garamond', serif";
+            messageEl.innerHTML = `<p>${message}</p><p style="margin-top: 15px; color: var(--primary); font-weight: 600;">- Asif</p>`;
+            
+            document.body.appendChild(messageEl);
+            
+            // Remove message after 5 seconds
+            setTimeout(() => {
+                messageEl.style.opacity = '0';
+                messageEl.style.transition = 'opacity 0.5s';
+                setTimeout(() => {
+                    document.body.removeChild(messageEl);
+                }, 500);
+            }, 5000);
+        }
+        
+        // Initialize everything when page loads
+        window.addEventListener('load', function() {
+            createBackgroundAnimation();
+            setupCountdown();
+            
+            // Initial confetti celebration
+            setTimeout(createConfetti, 1000);
+            
+            // Add some scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for scroll animations
+            document.querySelectorAll('.celebration-card, .date-section, .message-section, .countdown-container, .hearts-container').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
